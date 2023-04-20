@@ -70,7 +70,7 @@ rule all:
 rule mosdepth:
     input:
         bam=get_bam,
-        bed=os.path.join(ebm_target_dir, "EBM-Panel.hg19.selected_transcripts_cds.sorted.int20.bed"")
+        bed=os.path.join(ebm_target_dir, "EBM-Panel.hg19.selected_transcripts_cds.sorted.int20.bed")
     output:
         "coverage/{sample}.mosdepth.global.dist.txt",
         "coverage/{sample}.per-base.bed.gz",
@@ -241,7 +241,7 @@ rule genelists:
 rule cds_length:
     input:
         genes="coverage/{sample}.genelist",
-        cds=os.path.join(ebm_target_dir,"EBM-Panel.hg19.genes_selected_transcripts_cdslengths.bed")
+        cds=os.path.join(ebm_target_dir, "EBM-Panel.hg19.genes_selected_transcripts_cdslengths.bed")
     output: "coverage/{sample}.genelist_cds_lengths.txt"
     shell:
         """

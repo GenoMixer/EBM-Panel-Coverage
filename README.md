@@ -1,5 +1,5 @@
 # EBM-Panel-Coverage
-Workflow for the EBM panel target-based coverage analysis using Snakemake.
+Workflow for the Illumina EBM panel target-based coverage analysis using Snakemake.
 
 ## Requirement
 - Linux (tested on Debian v9.13)

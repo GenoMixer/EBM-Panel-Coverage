@@ -42,7 +42,7 @@ print(samples)
 
 # get bam
 def get_bam(wildcards):
-        return sorted(glob.glob("Alignment_1/*/" + wildcards.sample + "_S[1-8]" + ".bam"))
+        return sorted(glob.glob("Alignment_1/*/" + wildcards.sample + "_S[1-12]" + ".bam"))
 
 rule all:
     input:

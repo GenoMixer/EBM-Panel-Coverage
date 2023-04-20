@@ -54,16 +54,16 @@ rule all:
          expand("coverage/{sample}.thresholds.bed", sample=samples.index),
          expand("coverage/{sample}.regions.bed.gz", sample=samples.index),
          expand("coverage/{sample}.regions.bed", sample=samples.index),
-         expand("coverage/{sample}.targets_pct_gt_500.bed", sample=samples.index),
-         expand("coverage/{sample}.targets_not_100pct_gt_500.bed", sample=samples.index),
-         expand("coverage/{sample}.targets_not_100pct_gt_500.txt", sample=samples.index),
-         expand("coverage/{sample}.bases_lt_500_1based_annotated_regions.txt", sample=samples.index),
+         expand("coverage/{sample}.targets_pct_gt_30.bed", sample=samples.index),
+         expand("coverage/{sample}.targets_not_100pct_gt_30.bed", sample=samples.index),
+         expand("coverage/{sample}.targets_not_100pct_gt_30.txt", sample=samples.index),
+         expand("coverage/{sample}.bases_lt_30_1based_annotated_regions.txt", sample=samples.index),
          expand("coverage/{sample}.genelist", sample=samples.index),
          expand("coverage/{sample}.genelist_cds_lengths.txt", sample=samples.index),
          expand("coverage/{sample}.regions_meancov_genelist.bed", sample=samples.index),
-         expand("coverage/{sample}.bases_lt_500_1based_annotated_genelist.txt", sample=samples.index),
-         expand("coverage/{sample}.bases_lt_500_1based_annotated_regions_genelist.txt", sample=samples.index),
-         expand("coverage/{sample}.targets_not_100pct_gt_500_genelist.txt", sample=samples.index),
+         expand("coverage/{sample}.bases_lt_30_1based_annotated_genelist.txt", sample=samples.index),
+         expand("coverage/{sample}.bases_lt_30_1based_annotated_regions_genelist.txt", sample=samples.index),
+         expand("coverage/{sample}.targets_not_100pct_gt_30_genelist.txt", sample=samples.index),
          expand("coverage/{sample}.coverage_data_compilation.xlsx", sample=samples.index)
 
 

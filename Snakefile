@@ -1,6 +1,7 @@
 # libraries
 import os
 import io
+import re
 import glob
 import numpy as np
 import pandas as pd
@@ -42,7 +43,7 @@ print(samples)
 
 # get bam
 def get_bam(wildcards):
-        return sorted(glob.glob("Alignment_1/*/" + wildcards.sample + "_S[1-12]" + ".bam"))
+        return sorted(glob.glob("Alignment_1/*/" + wildcards.sample + "_S*" + ".bam"))
 
 rule all:
     input:

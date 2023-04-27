@@ -329,5 +329,5 @@ rule rscript:
     params:  
        prefix="{sample}",
        run=RUN
-    script: '/mnt/ngs-resources/r_scripts/R_coverage_data_compilation.R'
+    script: '/mnt/ngs-resources/r_scripts/R_coverage_data_compilation_ebm.R'
 

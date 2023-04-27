@@ -151,7 +151,7 @@ rule intersect:
         bedtools intersect \
            -a {input.abed} \
            -b {input.bbed} \
-        | awk -v desired_min_cov="30" 'BEGIN {{FS="\t"; OFS="\t"}} {{if ($4 < 500) print $0}}' \
+        | awk 'BEGIN {{FS="\t"; OFS="\t"}} {{if ($4 < 500) print $0}}' \
         | bedtools makewindows \
            -w 1 \
            -b - \
@@ -312,9 +312,7 @@ rule base:
         grep -F \
         -f {input.genes} \
         {input.target} \
-        | awk \
-        -v desired_min_cov="30" \
-        'BEGIN {{FS="\t"; OFS="\t"; print "Chr","Start","End","Target_Name","pct_bases_gt_30x_cov"}} {{print $0}}' - \
+        | awk 'BEGIN {{FS="\t"; OFS="\t"; print "Chr","Start","End","Target_Name","pct_bases_gt_30x_cov"}} {{print $0}}' - \
         > {output}
         """
 

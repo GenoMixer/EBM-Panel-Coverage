@@ -276,12 +276,11 @@ rule basecov:
     output: "coverage/{sample}.bases_lt_30_1based_annotated_genelist.txt"
     shell:
         """
-        set -e \
         grep -F \
         -f {input.genes} \
         {input.regions} \
         | awk 'BEGIN {{FS="\t"; OFS="\t"; print "#chr","start","end","cov","gene","transcript","exon","coding_change","protein_consequence","region_type"}} {{print $0}}' - \
-        > {output}
+        > {output} || true
         """
 
 
@@ -292,12 +291,11 @@ rule regions:
     output: "coverage/{sample}.bases_lt_30_1based_annotated_regions_genelist.txt"
     shell:
         """
-        set -e \
         grep -F \
         -f {input.genes} \
         {input.regions} \
         | awk 'BEGIN {{FS="\t"; OFS="\t"; print "#chr","first_base","last_base","gene","transcript","exon","first_coding_change","last_coding_change","first_protein_cons","last_protein_cons","region_length_bp","mean_cov","min_cov","max-cov"}} {{print $0}}' - \
-        > {output}
+        > {output} || true
         """
 
 
@@ -308,12 +306,11 @@ rule base:
     output: "coverage/{sample}.targets_not_100pct_gt_30_genelist.txt"
     shell: 
         """
-        set -e \
         grep -F \
         -f {input.genes} \
         {input.target} \
         | awk 'BEGIN {{FS="\t"; OFS="\t"; print "Chr","Start","End","Target_Name","pct_bases_gt_30x_cov"}} {{print $0}}' - \
-        > {output}
+        > {output} || true
         """
 
 
